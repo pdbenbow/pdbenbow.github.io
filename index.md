@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+# Fishing for data
 
-Maybe say a some things about yourself.
+My name is Pete. I'm a software developer and trainer specializing in Microsoft business intelligence technologies. I'm also an avid fly-fisherman, musician, Anglophile, and gigantic nerd. 
 
-Or maybe what you plan to blog about.
+This site is my personal playground for blogging on topics like SQL Server and Power BI.
