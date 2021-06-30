@@ -1,4 +1,4 @@
-## Blog Post Title From First Header
+## Test blog post
 
 Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.
 
@@ -13,10 +13,21 @@ This is a sample blog post. You can talk about all sorts of fun things here.
 #### Some T-SQL Code
 
 ```tsql
-SELECT This, [Is], A, Code, Block -- Using SSMS style syntax highlighting
-    , REVERSE('abc')
-FROM dbo.SomeTable s
-    CROSS JOIN dbo.OtherTable o;
+declare @outstatus nvarchar(max)
+	, @outresponse nvarchar(max)
+	, @postdata nvarchar(max)
+
+set @postdata = '{"text":"This is another message from the production EDW (bi01) posted directly to Slack using a query in SQL Server so I can verify the new name of the webhook and the new icon."}' 
+
+exec edw.sp_API_Request 'post'
+	, ''
+	, @postdata
+	, 'https://hooks.slack.com/services/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'
+	, @outstatus output
+	, @outresponse output 
+
+select @outstatus as [response status]
+	, @outresponse as [response text]
 ```
 
 #### Some PowerShell Code
