@@ -22,7 +22,7 @@ set @postdata = '{"text":"This is another message from the production EDW (bi01)
 exec edw.sp_API_Request 'post'
 	, ''
 	, @postdata
-	, 'https://hooks.slack.com/services/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'
+	, 'https://hooks.slack.com/services/{}/{}/{}'
 	, @outstatus output
 	, @outresponse output 
 
